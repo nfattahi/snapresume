@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="apple-mobile-web-app-title" content="Snapresume">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+		<title>Navid's Snapchat-style Resume</title>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="css/ionicons.css" type="text/css" media="screen" />
+		<link href='http://fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+		<script defer src="js/fastclick.js"></script>
+		<script defer src="js/snapresume.js"></script>
+		<link rel="icon" type="image/png" href="http://navid.cc/snapchat/img/Snapchat_logo.png">
+		<!--<script defer src="js/app.js"></script>-->
+	</head>
+	<body class="ios7">
+		<div class="wrapper">
+		<div id="clock"></div>
+		<section id="view-home" class="active">
+			<header>
+				<button class="left">
+					<div class="label"><span class="ion-camera"></span</div>
+				</button>
+				<h1 style="font-family: 'Noto Sans', sans-serif; color:white;font-size: 1.3em;">resume</h1>
+				<button class="right" data-vin="view-about" data-sd="popin">
+					<div class="label setting"><span class="ion-gear-b"></span</div>
+				</button>
+			</header>
+			<div class="scrollMask"></div>
+			<div class="scrollWrap">
+				<div class="scroll">
+				<div class="content">
+					<ul class="arrowed">
+						<li id="about-me">
+							<div class="innerLi">
+								<div class="big"><span class="ion-ios7-person">About Me</span></div>
+							</div>
+						</li>
+						<li id="education">
+							<div class="innerLi">
+								<div class="big"><span class="ion-ios7-bookmarks">Education</span></div>
+							</div>
+						</li>
+						<li id="work">
+							<div class="innerLi">
+								<div class="big"><span class="ion-ios7-briefcase">Work Experience</span></div>
+							</div>
+						</li>
+						<li id="skills">
+							<div class="innerLi">
+								<div class="big"><span class="ion-ios7-speedometer">Skills</span></div>
+							</div>
+						</li>
+						<li id="profile">
+							<div class="innerLi">
+								<div class="big"><span class="ion-ios7-information">Complete Profile</span></div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			</div>
+		</section>
+		<section class="hidden" id="view-about">
+			<header>
+				<h1 class="welcome-header">Let's Go!</h1>
+				<button class="right bold">
+					<div class="label about"><span class="ion-ios7-arrow-forward"></span></div>
+				</button>
+			</header>
+			<div class="scrollMask"></div>
+			<div class="scrollWrap">
+				<div class="scroll welcome">
+				<div class="content">
+                    <h2>hello there!</h2>
+                    <img src="img/Snapchat_logo.png" width=100px />
+                    <p>Welcome to my snapresume.</p>
+				</div>
+			</div>
+			</div>
+		</section>
+		<section class="hidden" id="view-settings">
+			<header>
+				<h1 class="setting-header">Settings</h1>
+				<button class="left bold">
+					<div class="label settings"><span class="ion-ios7-arrow-back"></span></div>
+				</button>
+			</header>
+			<div class="scrollMask"></div>
+			<div class="scrollWrap">
+				<div class="scroll">
+				<div class="content">
+					<div class="setting">
+						<div class="setting-cat">My Account</div>
+					</div>
+					<div class="option">
+						<div class="item">Timer</div>
+						<div class="value">
+							<input type="checkbox" name="toggle" id="toggle" checked="checked">
+							<label for="toggle"></label>
+						</div>
+					</div>
+					<div class="option" id="timesetter">
+						<div class="item">Timer Delay</div>
+						<div class="value">
+							<div class="control" id="plus"><span class="ion-ios7-plus-outline"></span></div>
+							<input type="text" id="timer" value="10">
+							<div class="control" id="minus"><span class="ion-ios7-minus-outline"></span></div>
+						</div>
+					</div>
+					<div id="disabler"></div>           
+				</div>
+			</div>
+			</div>
+		</section>
+		<section class="hidden" id="view-profile">
+			<header>
+				<h1 class="welcome-header" style="font-size:0.9em">snapresume</h1>
+				<button class="left bold">
+					<div class="label profile"><span class="ion-ios7-arrow-back"></span></div>
+				</button>
+			</header>
+			<div class="scrollMask"></div>
+			<div class="scrollWrap">
+				<div class="scroll welcome">
+				<div class="content">
+                    <h2>Hooray!</h2>
+                    <br/>
+                    <p>To view my complete profile, please visit my website: <a href="http://navid.cc">navid.cc</a></p>
+				</div>
+			</div>
+			</div>
+		</section>
+		<section class="hidden tab3" id="view-tab3">
+			<div class="info-wrapper">
+				<div id="timeleft1"></div>
+				<img src="img/profile-pic.png" class="face" alt="">
+				<p class="header-name">Navid Fattahi</p>
+				<p class="header-title">Software/Web Developer | Roboticist | Green Advocate</p>
+				<div class="visible-sm visible-xs social-icons">
+					<a href="http://github.com/nfattahi" class="github" data-toggle="tooltip" data-placement="top" title="My GitHub Profile"></a>
+					<a href="http://ca.linkedin.com/in/navidfattahi" class="linkedin" data-toggle="tooltip" data-placement="top" title="Say hi on Linkedin!"></a>
+				</div>
+				<p class="header-subtitle"><b>Hello there!</b> My name is Navid Fattahi and I'm a Software/Web Developer with endless amount of passion for robotics, artificial intelligence, machine learning and anything related! In my leisure time, I'm following up with socio-political news, reading books, and playing the piano. Welcome to my profile!</p>
+			</div>
+		</section>
+		<section class="hidden tab2" id="view-tab2">
+            <div class="info-wrapper">
+            	<div id="timeleft2"></div>
+				<div>
+					<div class="logo"><img src="img/ubc.png" height=60/></div>
+					<p class="company">University of British Columbia</p>
+					<p class="job-title">Bachelor of Applied Science | Electrical & Computer Engineering</p>
+					<span class="date">September 2009 - May 2014</span>
+				</div>
+				<br/>
+				<div>
+					<div class="logo"><img src="img/iskl.png" height=60/></div>
+					<p class="company">International School of Kuala Lumpur</p>
+					<p class="job-title">International Baccalaureate Diploma</p>
+					<span class="date">September 2007 - May 2009</span>
+				</div>
+            </div>
+		</section>
+		<section class="hidden tab1" id="view-tab1">
+            <div class="info-wrapper">
+            	<div id="timeleft3"></div>
+				<div class="job">
+					<p class="company">Rigid Robotics, Inc.</p>
+					<p class="job-title">R&D Intern and Software Dev.</p>
+				</div>
+				<div class="job">
+					<p class="company">UBC Snowbots Team</p>
+					<p class="job-title">Team Captain - Software Dev.</p>
+				</div>
+				<div class="job">
+					<p class="company">UBC Arts ISIT</p>
+					<p class="job-title">Web Developer</p>
+				</div>
+				<div class="job">
+					<p class="company">UBC Thunderbird Robotics</p>
+					<p class="job-title">Summer Intern - AI Developer</p>
+				</div>
+				<div class="job">
+					<p class="company">UBC Faculty of Med</p>
+					<p class="job-title">Web Developer</p>
+				</div>
+				<div class="job">
+					<p class="company">UBC Industrial Automation Lab</p>
+					<p class="job-title">Undergrad Research Intern</p>
+				</div>
+            </div>
+		</section>
+		<section class="hidden tab0" id="view-tab1">
+            <div class="info-wrapper">
+            	<div id="timeleft4"></div>
+				<div class="skill">
+					<p class="company">C/C++</p>
+					<div class="meter">
+						<span style="width: 95%"></span>
+					</div>
+				</div>
+				<div class="skill">
+					<p class="company">Java</p>
+					<div class="meter">
+						<span style="width: 75%"></span>
+					</div>
+				</div>
+				<div class="skill">
+					<p class="company">Javascript/jQuery</p>
+					<div class="meter red">
+						<span style="width: 95%"></span>
+					</div>
+				</div>
+				<div class="skill">
+					<p class="company">HTML5/CSS3</p>
+					<div class="meter red">
+						<span style="width: 75%"></span>
+					</div>
+				</div>
+				<div class="skill">
+					<p class="company">PHP</p>
+					<div class="meter red">
+						<span style="width: 50%"></span>
+					</div>
+				</div>
+				<div class="skill">
+					<p class="company">Robot Op Sys (ROS)</p>
+					<div class="meter orange">
+						<span style="width: 85%"></span>
+					</div>
+				</div>
+				<div class="skill">
+					<p class="company">OpenCV</p>
+					<div class="meter orange">
+						<span style="width: 50%"></span>
+					</div>
+				</div>
+            </div>
+		</section>
+		<div style="clear:both"></div>
+		</div>
+	</body>
+<script>
+
+</script>
+</html>
